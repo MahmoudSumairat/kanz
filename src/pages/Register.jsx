@@ -3,7 +3,7 @@ import React from 'react';
 
 const Register = () => {
   return (
-    <View>
+    <View style={{...pageStyles}}>
       <Text>Register</Text>
     </View>
   );

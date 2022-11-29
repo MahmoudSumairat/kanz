@@ -4,14 +4,13 @@ import {NavigationContainer} from '@react-navigation/native';
 import 'react-native-gesture-handler';
 import BottomNavigator from './src/components/BottomNavigator';
 import {COLORS} from './src/constants/colors';
+import StackNavigator from './src/components/StackNavigator';
 
 const App = () => {
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: COLORS.WHITE}}>
-      <NavigationContainer>
-        <BottomNavigator />
-      </NavigationContainer>
-    </SafeAreaView>
+    <NavigationContainer>
+      <StackNavigator />
+    </NavigationContainer>
   );
 };
 

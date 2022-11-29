@@ -6,10 +6,11 @@ import {
   tabNavigationOptions,
 } from '../../constants/navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
+import {useRoute} from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
 
-const NavTab = () => {
+const NavTab = props => {
   return (
     <Tab.Navigator {...{screenOptions}}>
       {tabNavigationList.map(nav => (

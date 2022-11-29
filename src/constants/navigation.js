@@ -1,17 +1,17 @@
-import StackNavigator from '../components/StackNavigator';
 import Cart from '../pages/Cart';
 import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Profile from '../pages/Profile';
 import Register from '../pages/Register';
 import Wishlist from '../pages/Wishlist';
+import BottomNavigator from '../components/BottomNavigator';
 import {COLORS} from './colors';
 
 export const tabNavigationList = [
   {
     name: 'Home',
     iconName: 'home',
-    page: StackNavigator,
+    page: Home,
   },
   {
     name: 'Cart',
@@ -33,7 +33,7 @@ export const tabNavigationList = [
 export const stackNavigationList = [
   {
     name: 'Home',
-    page: Home,
+    page: BottomNavigator,
   },
   {
     name: 'Cart',

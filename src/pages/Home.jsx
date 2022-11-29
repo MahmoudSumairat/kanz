@@ -1,13 +1,16 @@
-import {View, Text} from 'react-native';
+import {View, Text, SafeAreaView} from 'react-native';
 import React from 'react';
 import {COLORS} from '../constants/colors';
 import {pageStyles} from '../shared/pageStyles';
 
-const Home = () => {
+const Home = ({navigation}) => {
+  navigation.navigate('Login');
   return (
-    <View style={{...pageStyles}}>
-      <Text>Home</Text>
-    </View>
+    <SafeAreaView style={{flex: 1}}>
+      <View style={{...pageStyles}}>
+        <Text>Home</Text>
+      </View>
+    </SafeAreaView>
   );
 };
 

@@ -3,9 +3,11 @@ import React, {useState} from 'react';
 import {pageStyles} from '../shared/pageStyles';
 import Logo from '../svg/Logo';
 import {COLORS} from '../constants/colors';
-import {TextInput} from 'react-native-gesture-handler';
+import TextInput from '../coreui/TextInput/TextInput';
+import Button from '../coreui/Button/Button';
+import LoginForm from '../components/LoginForm/LoginForm';
 
-const Login = () => {
+const Login = ({navigation}) => {
   const [focusedInputs, setFocusedInputs] = useState({
     email: false,
     password: false,
@@ -46,45 +48,7 @@ const Login = () => {
             }}>
             Login using Email and Password
           </Text>
-          <View
-            style={{
-              alignSelf: 'stretch',
-              marginTop: 30,
-              marginRight: 20,
-              marginLeft: 20,
-            }}>
-            <TextInput
-              onFocus={() => onFocus('email')}
-              onBlur={() => onBlur('email')}
-              nativeID="email"
-              placeholder="Email"
-              style={{
-                borderWidth: 1,
-                borderColor: focusedInputs.email
-                  ? COLORS.PRIMARY
-                  : COLORS.MID_GRAY,
-                paddingHorizontal: 10,
-                paddingVertical: 15,
-                borderRadius: 10,
-                marginBottom: 30,
-              }}
-            />
-            <TextInput
-              nativeID="password"
-              onFocus={() => onFocus('password')}
-              onBlur={() => onBlur('password')}
-              style={{
-                borderWidth: 1,
-                borderColor: focusedInputs.password
-                  ? COLORS.PRIMARY
-                  : COLORS.MID_GRAY,
-                paddingHorizontal: 10,
-                paddingVertical: 15,
-                borderRadius: 10,
-              }}
-              placeholder="Password"
-            />
-          </View>
+          <LoginForm navigation={navigation} />
         </View>
       </ImageBackground>
     </View>

@@ -6,7 +6,6 @@ import {
   tabNavigationOptions,
 } from '../../constants/navigation';
 import Icon from 'react-native-vector-icons/AntDesign';
-import {useRoute} from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
 

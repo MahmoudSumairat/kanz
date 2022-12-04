@@ -32,7 +32,7 @@ export const tabNavigationList = [
 
 export const stackNavigationList = [
   {
-    name: 'Home',
+    name: 'Stack Home',
     page: BottomNavigator,
   },
   {

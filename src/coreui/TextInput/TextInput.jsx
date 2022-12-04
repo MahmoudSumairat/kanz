@@ -9,6 +9,7 @@ const CustomTextInput = ({
   onFocus = () => {},
   onBlur = () => {},
   placeholder = 'text input',
+  customStyles = {},
 }) => {
   const [isFocused, setIsFocused] = useState(false);
 
@@ -30,6 +31,7 @@ const CustomTextInput = ({
       onChange={onChange}
       style={[
         styles.textInput,
+        customStyles,
         {
           borderColor: isFocused ? COLORS.PRIMARY : COLORS.MID_GRAY,
         },

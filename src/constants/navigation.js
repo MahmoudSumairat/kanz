@@ -6,25 +6,26 @@ import Register from '../pages/Register';
 import Wishlist from '../pages/Wishlist';
 import BottomNavigator from '../components/BottomNavigator';
 import {COLORS} from './colors';
+import {PAGE_NAMES} from './pageNames';
 
 export const tabNavigationList = [
   {
-    name: 'Home',
+    name: PAGE_NAMES.HOME,
     iconName: 'home',
     page: Home,
   },
   {
-    name: 'Cart',
+    name: PAGE_NAMES.CART,
     iconName: 'shoppingcart',
     page: Cart,
   },
   {
-    name: 'Wishlist',
+    name: PAGE_NAMES.WISHLIST,
     iconName: 'hearto',
     page: Wishlist,
   },
   {
-    name: 'Profile',
+    name: PAGE_NAMES.PROFILE,
     iconName: 'user',
     page: Profile,
   },
@@ -32,27 +33,27 @@ export const tabNavigationList = [
 
 export const stackNavigationList = [
   {
-    name: 'Stack Home',
+    name: PAGE_NAMES.STACK_HOME,
     page: BottomNavigator,
   },
   {
-    name: 'Cart',
+    name: PAGE_NAMES.CART,
     page: Cart,
   },
   {
-    name: 'Wishlist',
+    name: PAGE_NAMES.WISHLIST,
     page: Wishlist,
   },
   {
-    name: 'Login',
+    name: PAGE_NAMES.LOGIN,
     page: Login,
   },
   {
-    name: 'Register',
+    name: PAGE_NAMES.REGISTER,
     page: Register,
   },
   {
-    name: 'Profile',
+    name: PAGE_NAMES.PROFILE,
     page: Profile,
   },
 ];

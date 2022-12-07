@@ -4,11 +4,24 @@ import CustomTextInput from '../../coreui/TextInput/TextInput';
 import Button from '../../coreui/Button/Button';
 import styles from './styles';
 import {PAGE_NAMES} from '../../constants/pageNames';
+import {register} from '../../API/auth';
 
 const RegisterForm = ({navigation}) => {
   const navigateToSignup = () => {
     navigation.navigate(PAGE_NAMES.LOGIN);
   };
+
+  const onRegisterPress = async () => {
+    console.log('???');
+    const res = await register(
+      'asd2sss2s@as.com',
+      '123213',
+      'mahmoud',
+      'bassam',
+    );
+    console.log('res : ', res);
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
@@ -31,7 +44,11 @@ const RegisterForm = ({navigation}) => {
           Sign in
         </Text>
       </Text>
-      <Button customStyles={styles.submitButton} textContent="Register" />
+      <Button
+        onPress={onRegisterPress}
+        customStyles={styles.submitButton}
+        textContent="Register"
+      />
     </View>
   );
 };

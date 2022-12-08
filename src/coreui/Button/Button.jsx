@@ -24,7 +24,7 @@ const Button = ({
     } else {
       rotationAnimate.stopAnimation();
     }
-  }, [rotationAnimate]);
+  }, [rotationAnimate, isLoading]);
 
   const runLoadingAnimation = () => {
     Animated.loop(
@@ -46,7 +46,7 @@ const Button = ({
         },
         customStyles,
       ]}
-      onPress={onPress}>
+      onPress={!isLoading ? onPress : null}>
       {!isLoading && (
         <Text style={[styles.buttonText, customTextStyles]}>
           {buttonTextContent}

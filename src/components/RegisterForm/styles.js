@@ -8,7 +8,7 @@ const loginFormStyles = StyleSheet.create({
     marginRight: 20,
     marginLeft: 20,
   },
-  inputContainer: {},
+
   signIn: {
     color: COLORS.DARK_GRAY,
     marginTop: 5,
@@ -27,6 +27,10 @@ const loginFormStyles = StyleSheet.create({
   inputContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+  },
+  errorMessage: {
+    color: COLORS.DANGER,
+    marginTop: 20,
   },
 });
 

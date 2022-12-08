@@ -20,6 +20,10 @@ const loginFormStyles = StyleSheet.create({
   submitButton: {
     marginTop: 20,
   },
+  errorMessage: {
+    color: COLORS.DANGER,
+    marginTop: 20,
+  },
 });
 
 export default loginFormStyles;

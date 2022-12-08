@@ -10,6 +10,8 @@ const CustomTextInput = ({
   onBlur = () => {},
   placeholder = 'text input',
   customStyles = {},
+  error = null,
+  ...props
 }) => {
   const [isFocused, setIsFocused] = useState(false);
 
@@ -23,17 +25,25 @@ const CustomTextInput = ({
     onFocus();
   };
 
+  const activeOrInactiveBorderColor = isFocused
+    ? COLORS.PRIMARY
+    : COLORS.MID_GRAY;
+  const validOrInvalidBorderColor = error
+    ? COLORS.DANGER
+    : activeOrInactiveBorderColor;
+
   return (
     <TextInput
       nativeID={nativeID}
       onFocus={handleFocus}
       onBlur={handleBlur}
       onChange={onChange}
+      {...props}
       style={[
         styles.textInput,
         customStyles,
         {
-          borderColor: isFocused ? COLORS.PRIMARY : COLORS.MID_GRAY,
+          borderColor: validOrInvalidBorderColor,
         },
       ]}
       placeholder={placeholder}

@@ -5,4 +5,6 @@ export const COLORS = {
   BLACK: '#000000',
   DARK_GRAY: '#414141',
   LIGHT_GRAY: '#eaeaea',
+  DANGER: '#DD0021',
+  TRANSPARENT_DANGER: 'rgba(218, 91, 110, .2)',
 };

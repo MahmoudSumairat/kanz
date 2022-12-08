@@ -7,4 +7,6 @@ export const COLORS = {
   LIGHT_GRAY: '#eaeaea',
   DANGER: '#DD0021',
   TRANSPARENT_DANGER: 'rgba(218, 91, 110, .2)',
+  ORIGINAL_WHITE: '#ffffff',
+  SHADOW: '#DDDDDD',
 };

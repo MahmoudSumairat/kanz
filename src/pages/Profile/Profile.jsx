@@ -1,6 +1,6 @@
 import {View, Text} from 'react-native';
 import React from 'react';
-import {pageStyles} from '../shared/pageStyles';
+import {pageStyles} from '../../shared/pageStyles';
 
 const Profile = () => {
   return (

@@ -1,9 +1,9 @@
-import Cart from '../pages/Cart';
-import Home from '../pages/Home';
-import Login from '../pages/Login';
-import Profile from '../pages/Profile';
-import Register from '../pages/Register';
-import Wishlist from '../pages/Wishlist';
+import Cart from '../pages/Cart/Cart';
+import Home from '../pages/Home/Home';
+import Login from '../pages/Login/Login';
+import Profile from '../pages/Profile/Profile';
+import Register from '../pages/Register/Register';
+import Wishlist from '../pages/Wishlist/Wishlist';
 import BottomNavigator from '../components/BottomNavigator';
 import {COLORS} from './colors';
 import {PAGE_NAMES} from './pageNames';
@@ -72,7 +72,8 @@ export const tabNavigationOptions = {
 export const screenOptions = {
   tabBarStyle: {
     backgroundColor: COLORS.WHITE,
-    height: 60,
+    height: 80,
+    paddingTop: 10,
     borderTopWidth: 1,
     borderTopColor: COLORS.LIGHT_GRAY,
   },

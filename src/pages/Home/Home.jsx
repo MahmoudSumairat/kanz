@@ -3,6 +3,8 @@ import React from 'react';
 import Logo from '../../svg/Logo';
 import styles from './styles';
 import SearchInput from '../../components/SearchInput/SearchInput';
+import ProductsList from '../../components/ProductsList/ProductsList';
+import {ScrollView} from 'react-native-gesture-handler';
 
 const Home = () => {
   return (
@@ -11,13 +13,15 @@ const Home = () => {
       source={require('../../assets/backgrounds/Home.jpg')}
       resizeMode="cover">
       <SafeAreaView style={{flex: 1}}>
-        <View style={styles.logoContainer}>
-          <Logo />
-        </View>
-        <SearchInput />
-        <View style={styles.logoContainer}>
-          <Text>Home</Text>
-        </View>
+        <ScrollView>
+          <View style={styles.logoContainer}>
+            <Logo />
+          </View>
+          <SearchInput />
+          <View style={styles.productsList}>
+            <ProductsList />
+          </View>
+        </ScrollView>
       </SafeAreaView>
     </ImageBackground>
   );

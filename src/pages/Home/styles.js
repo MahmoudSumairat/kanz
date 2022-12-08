@@ -6,6 +6,9 @@ const homeStyles = StyleSheet.create({
     marginTop: 30,
     marginLeft: 20,
   },
+  productsList: {
+    padding: 20,
+  },
 });
 
 export default homeStyles;

@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
-import {COLORS} from '../../../constants/colors';
-import {SHADOW_STYLES} from '../../../shared/shadowStyles';
+import {COLORS} from '../../constants/colors';
+import {SHADOW_STYLES} from '../../shared/shadowStyles';
 
 const resetTextStyles = {
   marginTop: 0,
@@ -37,6 +37,12 @@ const itemStyles = StyleSheet.create({
   },
   itemQuantity: {
     ...resetTextStyles,
+  },
+  wishlistItemContainer: {
+    alignItems: 'center',
+  },
+  wishlistItemTitle: {
+    marginBottom: 10,
   },
 });
 

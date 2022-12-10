@@ -6,7 +6,7 @@ import styles from './styles';
 import {PAGE_NAMES} from '../../constants/pageNames';
 import {ITEM_TYPES} from '../../constants/itemTypes';
 
-const CartItems = ({navigation}) => {
+const WishlistItems = ({navigation}) => {
   const onCartItemPress = id => {
     navigation.push(PAGE_NAMES.PRODUCT_DETAILS, {id});
   };
@@ -15,11 +15,11 @@ const CartItems = ({navigation}) => {
     <View style={styles.listContainer}>
       {cartItems.map(item => (
         <Pressable onPress={() => onCartItemPress(item.id)}>
-          <Item itemType={ITEM_TYPES.CART} key={item.title} item={item} />
+          <Item itemType={ITEM_TYPES.WISHLIST} key={item.title} item={item} />
         </Pressable>
       ))}
     </View>
   );
 };
 
-export default CartItems;
+export default WishlistItems;

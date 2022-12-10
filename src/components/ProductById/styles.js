@@ -17,13 +17,19 @@ const productByIdStyles = StyleSheet.create({
     marginTop: 0,
     marginBottom: 0,
   },
+  productHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 20,
+    justifyContent: 'space-between',
+    paddingRight: 10,
+  },
   productData: {
     paddingTop: 10,
   },
   productTitle: {
     fontSize: 30,
     fontWeight: '500',
-    marginBottom: 20,
     marginTop: 0,
     color: COLORS.DARK_GRAY,
   },

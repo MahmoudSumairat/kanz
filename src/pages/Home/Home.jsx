@@ -6,7 +6,7 @@ import SearchInput from '../../components/SearchInput/SearchInput';
 import ProductsList from '../../components/ProductsList/ProductsList';
 import {ScrollView} from 'react-native-gesture-handler';
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
     <ImageBackground
       style={{flex: 1}}
@@ -19,7 +19,7 @@ const Home = () => {
           </View>
           <SearchInput />
           <View style={styles.productsList}>
-            <ProductsList />
+            <ProductsList navigation={navigation} />
           </View>
         </ScrollView>
       </SafeAreaView>

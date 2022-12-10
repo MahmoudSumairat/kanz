@@ -4,6 +4,7 @@ import Login from '../pages/Login/Login';
 import Profile from '../pages/Profile/Profile';
 import Register from '../pages/Register/Register';
 import Wishlist from '../pages/Wishlist/Wishlist';
+import ProductDetails from '../pages/ProductDetails/ProductDetails';
 import BottomNavigator from '../components/BottomNavigator';
 import {COLORS} from './colors';
 import {PAGE_NAMES} from './pageNames';
@@ -55,6 +56,10 @@ export const stackNavigationList = [
   {
     name: PAGE_NAMES.PROFILE,
     page: Profile,
+  },
+  {
+    name: PAGE_NAMES.PRODUCT_DETAILS,
+    page: ProductDetails,
   },
 ];
 

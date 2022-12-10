@@ -4,13 +4,13 @@ import {products} from '../../data/products';
 import ProductItem from './ProductItem/ProductItem';
 import styles from './styles';
 
-const ProductsList = () => {
+const ProductsList = ({navigation}) => {
   return (
     <View style={styles.productsListContainer}>
       {products.map(product => {
         return (
           <View style={styles.productItem}>
-            <ProductItem productData={product} />
+            <ProductItem productData={product} navigation={navigation} />
           </View>
         );
       })}

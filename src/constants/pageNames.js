@@ -6,4 +6,5 @@ export const PAGE_NAMES = {
   STACK_HOME: 'Stack Home',
   REGISTER: 'Register',
   LOGIN: 'Login',
+  PRODUCT_DETAILS: 'Product Details',
 };

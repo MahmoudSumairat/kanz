@@ -14,6 +14,8 @@ const productByIdStyles = StyleSheet.create({
   backButtonText: {
     color: COLORS.PRIMARY,
     fontSize: 16,
+    marginTop: 0,
+    marginBottom: 0,
   },
   productData: {
     paddingTop: 10,
@@ -22,6 +24,7 @@ const productByIdStyles = StyleSheet.create({
     fontSize: 30,
     fontWeight: '500',
     marginBottom: 20,
+    marginTop: 0,
     color: COLORS.DARK_GRAY,
   },
   productImage: {
@@ -34,6 +37,8 @@ const productByIdStyles = StyleSheet.create({
     fontSize: 16,
     height: 170,
     color: COLORS.DARK_GRAY,
+    marginTop: 0,
+    marginBottom: 0,
   },
 });
 

@@ -14,7 +14,7 @@ const Profile = ({navigation}) => {
         source={require('../../assets/backgrounds/Home.jpg')}
         resizeMode="cover">
         <SafeAreaView>
-          <ProfileData />
+          <ProfileData navigation={navigation} />
         </SafeAreaView>
       </ImageBackground>
     </View>

@@ -7,8 +7,11 @@ import {PAGE_NAMES} from '../../constants/pageNames';
 import {login} from '../../API/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {ERROR_MESSAGE} from '../../constants/errorMessages';
+import {useDispatch} from 'react-redux';
+import {loginAction} from '../../redux/actionCreators/auth';
 
 const LoginForm = ({navigation}) => {
+  const dispatch = useDispatch();
   const navigateToSignup = () => {
     navigation.navigate(PAGE_NAMES.REGISTER);
   };
@@ -29,6 +32,7 @@ const LoginForm = ({navigation}) => {
       console.log(accessToken, uid);
       AsyncStorage.setItem('@token', accessToken);
       AsyncStorage.setItem('@uid', uid);
+      dispatch(loginAction({token: accessToken, userId: uid}));
       navigation.navigate(PAGE_NAMES.HOME);
     } catch (err) {
       setLoginError(err.message);

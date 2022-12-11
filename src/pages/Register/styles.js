@@ -8,6 +8,7 @@ const loginStyles = StyleSheet.create({
     left: 10,
     flexDirection: 'row',
     alignItems: 'center',
+    zIndex: 999,
   },
   backButtonText: {
     marginTop: 0,

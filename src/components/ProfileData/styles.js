@@ -50,6 +50,9 @@ const profileDataStyles = StyleSheet.create({
     marginLeft: 20,
     color: COLORS.DARK_GRAY,
   },
+  logoutContainer: {
+    marginTop: 20,
+  },
 });
 
 export default profileDataStyles;

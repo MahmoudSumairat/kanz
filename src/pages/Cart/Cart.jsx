@@ -7,9 +7,11 @@ import styles from './styles';
 import Button from '../../coreui/Button/Button';
 import {useSelector} from 'react-redux';
 import UnauthenticatedUser from '../../components/UnauthenticatedUser/UnauthenticatedUser';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Cart = ({navigation}) => {
   const {isAuthenticated} = useSelector(state => state.auth);
+
   return isAuthenticated ? (
     <View style={{...pageStyles}}>
       <ImageBackground

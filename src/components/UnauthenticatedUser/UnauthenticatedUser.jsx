@@ -27,7 +27,7 @@ const UnauthenticatedUser = ({navigation}) => {
             <Icon name="lock" size={100} color={COLORS.PRIMARY} />
           </View>
           <Text customStyles={styles.description}>
-            You need to be authenticated to see your cart items
+            You need to be authenticated to access this page
           </Text>
           <Button onPress={onNavigatePress} textContent="Go To Login" />
         </View>

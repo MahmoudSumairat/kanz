@@ -5,8 +5,20 @@ import Text from '../../coreui/Text/Text';
 import {COLORS} from '../../constants/colors';
 import styles from './styles';
 import {userData} from '../../data/userData';
+import Button from '../../coreui/Button/Button';
+import {useDispatch} from 'react-redux';
+import {logoutAction} from '../../redux/actionCreators/auth';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {PAGE_NAMES} from '../../constants/pageNames';
 
-const ProfileData = () => {
+const ProfileData = ({navigation}) => {
+  const dispatch = useDispatch();
+  const onLogoutPress = async () => {
+    await AsyncStorage.removeItem('@token');
+    await AsyncStorage.removeItem('@uid');
+    dispatch(logoutAction());
+    navigation.navigate(PAGE_NAMES.HOME);
+  };
   return (
     <View style={styles.profileDataContainer}>
       <View style={styles.profileDataIconContainer}>
@@ -35,6 +47,9 @@ const ProfileData = () => {
           <Text customStyles={styles.itemsText}>
             Wishlist Items : {userData.cartItems}
           </Text>
+        </View>
+        <View style={styles.logoutContainer}>
+          <Button onPress={onLogoutPress} textContent="Logout" />
         </View>
       </View>
     </View>

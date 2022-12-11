@@ -7,8 +7,11 @@ import {PAGE_NAMES} from '../../constants/pageNames';
 import {register} from '../../API/auth';
 import {ERROR_MESSAGE} from '../../constants/errorMessages';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {useDispatch} from 'react-redux';
+import {loginAction} from '../../redux/actionCreators/auth';
 
 const RegisterForm = ({navigation}) => {
+  const dispatch = useDispatch();
   const [userData, setUserData] = useState({
     email: '',
     password: '',
@@ -27,12 +30,14 @@ const RegisterForm = ({navigation}) => {
   const onRegisterPress = async () => {
     try {
       setIsLoading(true);
-      const res = await register(userData);
+      const {accessToken, uid} = await register(userData);
       setIsLoading(false);
-      await AsyncStorage.setItem('@token', res.accessToken);
-      await AsyncStorage.setItem('@uid', res.uid);
+      await AsyncStorage.setItem('@token', accessToken);
+      await AsyncStorage.setItem('@uid', uid);
+      dispatch(loginAction({token: accessToken, userId: uid}));
       navigation.navigate(PAGE_NAMES.HOME);
     } catch (err) {
+      console.log(err);
       setRegistrationError(err.message);
       setIsLoading(false);
     }

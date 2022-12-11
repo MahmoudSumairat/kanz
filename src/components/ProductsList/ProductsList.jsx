@@ -1,10 +1,9 @@
 import {View, Text} from 'react-native';
 import React from 'react';
-import {products} from '../../data/products';
 import ProductItem from './ProductItem/ProductItem';
 import styles from './styles';
 
-const ProductsList = ({navigation}) => {
+const ProductsList = ({navigation, products}) => {
   return (
     <View style={styles.productsListContainer}>
       {products.map(product => {

@@ -4,7 +4,7 @@ import {
 } from '@firebase/auth';
 import {auth, db} from '../firebase/firebaseApp';
 import {setDoc, doc} from 'firebase/firestore';
-import {USERS} from '../constants/collections';
+import {CARTS, USERS, WISHLISTS} from '../constants/collections';
 
 const register = async ({email, password, firstName, lastName}) => {
   try {
@@ -13,11 +13,15 @@ const register = async ({email, password, firstName, lastName}) => {
       password,
       firstName,
       lastName,
+      cartItemsCount: 0,
+      wishlistItemsCount: 0,
     };
     const {
       user: {uid, accessToken},
     } = await createUserWithEmailAndPassword(auth, email, password);
     await setDoc(doc(db, USERS, uid), userData);
+    await setDoc(doc(db, CARTS, uid), {products: []});
+    await setDoc(doc(db, WISHLISTS, uid), {products: []});
     return Promise.resolve({accessToken, uid});
   } catch (err) {
     return Promise.reject({message: err.code});

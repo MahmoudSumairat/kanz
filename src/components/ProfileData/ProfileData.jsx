@@ -4,14 +4,13 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import Text from '../../coreui/Text/Text';
 import {COLORS} from '../../constants/colors';
 import styles from './styles';
-import {userData} from '../../data/userData';
 import Button from '../../coreui/Button/Button';
 import {useDispatch} from 'react-redux';
 import {logoutAction} from '../../redux/actionCreators/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {PAGE_NAMES} from '../../constants/pageNames';
 
-const ProfileData = ({navigation}) => {
+const ProfileData = ({navigation, userData}) => {
   const dispatch = useDispatch();
   const onLogoutPress = async () => {
     await AsyncStorage.removeItem('@token');
@@ -39,13 +38,13 @@ const ProfileData = ({navigation}) => {
         <View style={styles.itemsContainer}>
           <Icon size={25} name="shoppingcart" color={COLORS.PRIMARY} />
           <Text customStyles={styles.itemsText}>
-            Cart Items : {userData.cartItems}
+            Cart Items : {userData.cartItemsCount}
           </Text>
         </View>
         <View style={styles.itemsContainer}>
           <Icon size={25} name="hearto" color={COLORS.PRIMARY} />
           <Text customStyles={styles.itemsText}>
-            Wishlist Items : {userData.cartItems}
+            Wishlist Items : {userData.wishlistItemsCount}
           </Text>
         </View>
         <View style={styles.logoutContainer}>

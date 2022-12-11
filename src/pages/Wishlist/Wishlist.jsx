@@ -5,9 +5,13 @@ import Text from '../../coreui/Text/Text';
 import styles from './styles';
 import WishlistItems from '../../components/WishlistItems/WishlistItems';
 import Button from '../../coreui/Button/Button';
+import {useSelector} from 'react-redux';
+import UnauthenticatedUser from '../../components/UnauthenticatedUser/UnauthenticatedUser';
 
 const Wishlist = ({navigation}) => {
-  return (
+  const {isAuthenticated} = useSelector(state => state.auth);
+
+  return isAuthenticated ? (
     <View style={{...pageStyles}}>
       <ImageBackground
         style={{flex: 1}}
@@ -23,6 +27,8 @@ const Wishlist = ({navigation}) => {
         </SafeAreaView>
       </ImageBackground>
     </View>
+  ) : (
+    <UnauthenticatedUser navigation={navigation} />
   );
 };
 

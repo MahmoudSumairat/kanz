@@ -5,12 +5,16 @@ import 'react-native-gesture-handler';
 import BottomNavigator from './src/components/BottomNavigator';
 import {COLORS} from './src/constants/colors';
 import StackNavigator from './src/components/StackNavigator';
+import {Provider} from 'react-redux';
+import store from './src/redux/store';
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <StackNavigator />
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <StackNavigator />
+      </NavigationContainer>
+    </Provider>
   );
 };
 

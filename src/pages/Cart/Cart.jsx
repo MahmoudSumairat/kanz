@@ -5,9 +5,12 @@ import CartItems from '../../components/CartItems/CartItems';
 import Text from '../../coreui/Text/Text';
 import styles from './styles';
 import Button from '../../coreui/Button/Button';
+import {useSelector} from 'react-redux';
+import UnauthenticatedUser from '../../components/UnauthenticatedUser/UnauthenticatedUser';
 
 const Cart = ({navigation}) => {
-  return (
+  const {isAuthenticated} = useSelector(state => state.auth);
+  return isAuthenticated ? (
     <View style={{...pageStyles}}>
       <ImageBackground
         style={{flex: 1}}
@@ -24,6 +27,8 @@ const Cart = ({navigation}) => {
         </SafeAreaView>
       </ImageBackground>
     </View>
+  ) : (
+    <UnauthenticatedUser navigation={navigation} />
   );
 };
 

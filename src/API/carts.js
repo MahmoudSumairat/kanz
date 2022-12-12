@@ -1,4 +1,10 @@
-import {doc, getDoc} from 'firebase/firestore';
+import {
+  arrayRemove,
+  arrayUnion,
+  doc,
+  getDoc,
+  updateDoc,
+} from 'firebase/firestore';
 import {CARTS} from '../constants/collections';
 import {db} from '../firebase/firebaseApp';
 
@@ -10,4 +16,16 @@ const getCartItems = async userId => {
   return Promise.resolve(products);
 };
 
-export {getCartItems};
+const addItemToCart = async (productData, userId) => {
+  return updateDoc(doc(db, CARTS, userId), {
+    products: arrayUnion(productData),
+  });
+};
+
+const removeItemFromCart = async (productData, userId) => {
+  return updateDoc(doc(db, CARTS, userId), {
+    products: arrayRemove(productData),
+  });
+};
+
+export {getCartItems, addItemToCart, removeItemFromCart};

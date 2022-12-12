@@ -1,4 +1,4 @@
-import {collection, getDocs} from 'firebase/firestore';
+import {collection, doc, getDoc, getDocs} from 'firebase/firestore';
 import {PRODUCTS} from '../constants/collections';
 import {db} from '../firebase/firebaseApp';
 
@@ -9,4 +9,9 @@ const getProducts = async () => {
   return Promise.resolve(products);
 };
 
-export {getProducts};
+const getProductDetails = async productId => {
+  const res = await getDoc(doc(db, PRODUCTS, productId));
+  return Promise.resolve(res.data());
+};
+
+export {getProducts, getProductDetails};

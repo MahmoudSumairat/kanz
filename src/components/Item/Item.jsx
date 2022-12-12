@@ -3,11 +3,11 @@ import React from 'react';
 import styles from './styles';
 import Text from '../../coreui/Text/Text';
 import {ITEM_TYPES} from '../../constants/itemTypes';
-import Button from '../../coreui/Button/Button';
 
 const Item = ({item: {title, quantity, image, price}, itemType}) => {
   const isCartItem = itemType === ITEM_TYPES.CART;
   const isWishlistItem = itemType === ITEM_TYPES.WISHLIST;
+
   return (
     <View
       style={[
@@ -26,10 +26,9 @@ const Item = ({item: {title, quantity, image, price}, itemType}) => {
         {isCartItem && (
           <>
             <Text customStyles={styles.itemQuantity}>{quantity} item(s)</Text>
-            <Text customStyles={styles.itemPrice}>${price * quantity}</Text>
           </>
         )}
-        {isWishlistItem && <Button textContent="Add To Cart" />}
+        <Text customStyles={styles.itemPrice}>${price * (quantity || 1)}</Text>
       </View>
     </View>
   );

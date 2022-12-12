@@ -1,4 +1,10 @@
-import {doc, getDoc} from 'firebase/firestore';
+import {
+  arrayRemove,
+  arrayUnion,
+  doc,
+  getDoc,
+  updateDoc,
+} from 'firebase/firestore';
 import {WISHLISTS} from '../constants/collections';
 import {db} from '../firebase/firebaseApp';
 
@@ -8,4 +14,16 @@ const getWishlistItems = async userId => {
   return Promise.resolve(products);
 };
 
-export {getWishlistItems};
+const addItemToWishlist = async (productData, userId) => {
+  return updateDoc(doc(db, WISHLISTS, userId), {
+    products: arrayUnion(productData),
+  });
+};
+
+const removeItemFromWishlist = async (productData, userId) => {
+  return updateDoc(doc(db, WISHLISTS, userId), {
+    products: arrayRemove(productData),
+  });
+};
+
+export {getWishlistItems, addItemToWishlist, removeItemFromWishlist};
